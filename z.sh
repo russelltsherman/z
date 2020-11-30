@@ -24,13 +24,15 @@
 #     * z -e foo  # echo the best match, don't cd
 #     * z -c foo  # restrict matches to subdirs of $PWD
 
-[ -d "${_Z_DATA:-$HOME/.z}" ] && {
-    echo "ERROR: z.sh's datafile (${_Z_DATA:-$HOME/.z}) is a directory."
+XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME}"
+
+[ -d "${_Z_DATA:-$XDG_CACHE_HOME/.z}" ] && {
+    echo "ERROR: z.sh's datafile (${_Z_DATA:-$XDG_CACHE_HOME/.z}) is a directory."
 }
 
 _z() {
 
-    local datafile="${_Z_DATA:-$HOME/.z}"
+    local datafile="${_Z_DATA:-$XDG_CACHE_HOME/.z}"
 
     # if symlink, dereference
     [ -h "$datafile" ] && datafile=$(readlink "$datafile")

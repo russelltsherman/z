@@ -75,7 +75,7 @@ Optionally:
 Set \fB$_Z_CMD\fR to change the command name (default \fBz\fR).
 .RE
 .RS
-Set \fB$_Z_DATA\fR to change the datafile (default \fB$HOME/.z\fR).
+Set \fB$_Z_DATA\fR to change the datafile (default \fB$XDG_CACHE_HOME/.z\fR).
 .RE
 .RS
 Set \fB$_Z_NO_RESOLVE_SYMLINKS\fR to prevent symlink resolution.
@@ -137,7 +137,7 @@ The contents of the variable \fB$_Z_CMD\fR is aliased to \fB_z 2>&1\fR. If not
 set, \fB$_Z_CMD\fR defaults to \fBz\fR.
 .P
 The environment variable \fB$_Z_DATA\fR can be used to control the datafile
-location. If it is not defined, the location defaults to \fB$HOME/.z\fR.
+location. If it is not defined, the location defaults to \fB$XDG_CACHE_HOME/.z\fR.
 .P
 The environment variable \fB$_Z_NO_RESOLVE_SYMLINKS\fR can be set to prevent
 resolving of symlinks. If it is not set, symbolic links will be resolved when
@@ -158,7 +158,7 @@ The environment variable \fB$_Z_OWNER\fR can be set to your username, to
 allow usage of \fBz\fR when your sudo environment keeps \fB$HOME\fR set.
 .SH
 FILES
-Data is stored in \fB$HOME/.z\fR. This can be overridden by setting the
+Data is stored in \fB$XDG_CACHE_HOME/.z\fR. This can be overridden by setting the
 \fB$_Z_DATA\fR environment variable. When initialized, \fBz\fR will raise an
 error if this path is a directory, and not function correctly.
 .P

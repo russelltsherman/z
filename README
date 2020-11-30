@@ -58,7 +58,7 @@ NOTES
 
        Optionally:
               Set $_Z_CMD to change the command name (default z).
-              Set $_Z_DATA to change the datafile (default $HOME/.z).
+              Set $_Z_DATA to change the datafile (default $XDG_CACHE_HOME/.z).
               Set $_Z_NO_RESOLVE_SYMLINKS to prevent symlink resolution.
               Set $_Z_NO_PROMPT_COMMAND to handle PROMPT_COMMAND/precmd  your-
               self.
@@ -109,7 +109,7 @@ ENVIRONMENT
        $_Z_CMD defaults to z.
 
        The  environment  variable $_Z_DATA can be used to control the datafile
-       location. If it is not defined, the location defaults to $HOME/.z.
+       location. If it is not defined, the location defaults to $XDG_CACHE_HOME/.z.
 
        The environment variable $_Z_NO_RESOLVE_SYMLINKS can be set to  prevent
        resolving  of  symlinks.  If  it  is  not  set,  symbolic links will be
@@ -130,7 +130,7 @@ ENVIRONMENT
        allow usage of z when your sudo environment keeps $HOME set.
 
 FILES
-       Data is stored in $HOME/.z. This  can  be  overridden  by  setting  the
+       Data is stored in $XDG_CACHE_HOME/.z. This  can  be  overridden  by  setting  the
        $_Z_DATA  environment variable. When initialized, z will raise an error
        if this path is a directory, and not function correctly.
 
